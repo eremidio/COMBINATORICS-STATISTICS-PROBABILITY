@@ -8,6 +8,7 @@
 #include<iostream>
 #include<utility>
 #include<algorithm>
+#include<cmath>
 
 //***************************************************************************************************************************
 //VARIÁVEIS GLOBAIS
@@ -88,13 +89,9 @@ int permutations<T>::hash_function(){
 int i;
 hash_value = 0; 
 //Computando o valor hash de uma dada disposição
-for(i=0; i<set_vector.size(); ++i){
-if((i%2)==0)
-hash_value+=(prime_seed[i]+1)*(shifted_set_vector[i].index*shifted_set_vector[i].index*shifted_set_vector[i].index+shifted_set_vector[i].index);
-if((i%2)==1)
-hash_value-= (prime_seed[i]+1)*(shifted_set_vector[i].index*shifted_set_vector[i].index*shifted_set_vector[i].index+shifted_set_vector[i].index);
+for(i=0; i<set_vector.size(); ++i)
+hash_value+= std::pow(shifted_set_vector[i].index, i);
 
-                                  };
 return hash_value;
                                     };
 
