@@ -107,8 +107,6 @@ hash_value=hash_function();
 for(auto y:hash_vector){
 //Permutação repetida
 if(y==hash_value){
-std::swap(set_vector[index2], set_vector[index1]);
-
 attempts++;
 if(attempts>(total_permutations*10))
 return;
@@ -132,7 +130,11 @@ int i;
 hash_value = 0; 
 //Computando o valor hash de uma dada disposição
 for(i=0; i<set_vector.size(); ++i){
-hash_value+=i*set_vector[i].index;
+if((i%2)==0)
+hash_value+=(i+1)*(set_vector[i].index*set_vector[i].index*set_vector[i].index+set_vector[i].index);
+if((i%2)==1)
+hash_value-=(i+1)*(set_vector[i].index*set_vector[i].index*set_vector[i].index+set_vector[i].index);
+
                                   };
 return hash_value;
                                     };
