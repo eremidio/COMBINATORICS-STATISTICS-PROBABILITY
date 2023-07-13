@@ -88,7 +88,11 @@ int i;
 hash_value = 0; 
 //Computando o valor hash de uma dada disposição
 for(i=0; i<set_vector.size(); ++i){
-hash_value+=(i+1)*shifted_set_vector[i].index;
+if((i%2)==0)
+hash_value+=(i+1)*(shifted_set_vector[i].index*shifted_set_vector[i].index*shifted_set_vector[i].index+shifted_set_vector[i].index);
+if((i%2)==1)
+hash_value-=(i+1)*(shifted_set_vector[i].index*shifted_set_vector[i].index*shifted_set_vector[i].index+shifted_set_vector[i].index);
+
                                   };
 return hash_value;
                                     };
