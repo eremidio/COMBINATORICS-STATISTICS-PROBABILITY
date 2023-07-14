@@ -67,9 +67,15 @@ std::cout<<"Digite qual elemento será adicionado ao conjunto:\n";
 std::cin>>element_value;
 set_element.value=element_value;
 set_element.index=(prime_seed[i]);
-set_vector.push_back(set_element);
+//Elementos repetidos devem ter o mesmo index
+for (auto y:set_vector){
+if(set_element.value==y.value)
+set_element.index = y.index;
+break;
                        };
-                           };
+set_vector.push_back(set_element);
+                            };
+                             };
 
 //Função que translada os elementos de um vetor
 template<typename T>
