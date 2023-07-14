@@ -180,7 +180,7 @@ generate_combinations();
 ++shift_index;
                               };
 
-//Checando por novas permutações
+//Checando por novas combinações
 if(trial_run<2){
 std::reverse(set_vector.begin(), set_vector.end());
 trial_run++;
