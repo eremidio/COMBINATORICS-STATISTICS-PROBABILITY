@@ -71,8 +71,8 @@ set_element.index=(prime_seed[i]);
 for (auto y:set_vector){
 if(set_element.value==y.value)
 set_element.index = y.index;
-break;
                        };
+
 set_vector.push_back(set_element);
                             };
                              };
