@@ -41,7 +41,7 @@ void setup();//Função que recebe input do usuário
 void shift_set();//Função que realiza um shift do conjunto a ser permutado
 void generate_permutations();//Função que gera índices para transposições
 int hash_function();//Função que calcula um valor hash para cada permutação
-bool validate_permutation();//Função que detecta permitações repetidas
+bool validate_permutation();//Função que detecta permutações repetidas
 void show_permutation();//Função que exibe permutações
 void run();//Função principal
 
