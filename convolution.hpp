@@ -47,7 +47,7 @@ index_b=v2.size()-1;
 
 //Calculando n-ésimo elemento do vetor de convolução
 for(i=0; i<result_size-1; ++i){
-if(index_a<=(v1.size()-1)){
+if(index_a<(v1.size()-1)){
 temp=0;
 for(j=index_a, k=index_b; j>=0 && k>=0; --j, --k){
 temp+=v1[j]*v2[k];
@@ -61,7 +61,7 @@ result.push_back(temp);
 index_a++;
                           };
 
-if(index_a>(v1.size()-1)){
+if(index_a>=(v1.size()-1)){
 temp=0;
 for(j=index_a, k=index_b; j>=0 && k>=0; --j, --k){
 temp+=v1[j]*v2[k];
