@@ -1,4 +1,4 @@
-//VAMOS CRIAR UM AQRUIVO QUE IMPLMENTA UMA ROTINA PARA CALCULAR PERMUTAÇÕES EM UM CONJUNTO
+//VAMOS CRIAR UM ARQUIVO QUE IMPLMENTA UMA ROTINA PARA CALCULAR PERMUTAÇÕES EM UM CONJUNTO
 
 //***************************************************************************************************************************
 //CABEÇALHO
