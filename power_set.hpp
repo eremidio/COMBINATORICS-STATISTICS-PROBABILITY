@@ -1,6 +1,3 @@
-//VAMOS CRIAR UM PROGRAMA PARA TESTAR AS ROTINAS CRIADAS NO ARQUIVO combination.hpp
-//COMPILAR ESTE PROGRAMA COM O COMANDO: g++ -o power_set power_set.cpp
-
 /*
 A CARDINALIDADE DE UM CONJUNTO FINITO ω É IGUAL AO SEU NÚMERO DE ELEMENTOS E É DENONTADA POR |ω|.
 O CONJUNTO DE TODOS OS SUBCONJUNTOS DE UM DADO CONJUNTO É CHAMADO DE CONJUNTO POTÊNCIA E É DENOTADO POR P(ω).
@@ -50,7 +47,7 @@ std::cin>>set_size;
 //Variáveis locais 
 T element;
 
-//Recebendo os elementos que compõe o conjunto
+//Recebendo os elementos que compõem o conjunto
 for(int i = 0; i<set_size; ++i){
 std::cout<<"Digite qual elemento será adicionado ao conjunto:\n";
 std::cin>>element;
