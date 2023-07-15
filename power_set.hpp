@@ -47,7 +47,7 @@ std::cin>>set_size;
 //Variáveis locais 
 T element;
 
-//Recebendo os elementos que compõem o conjunto
+//Recebendo os elementos que compõe o conjunto
 for(int i = 0; i<set_size; ++i){
 std::cout<<"Digite qual elemento será adicionado ao conjunto:\n";
 std::cin>>element;
@@ -64,6 +64,12 @@ template<typename T>
 void power_set_class<T>::print_subset(){
 //Variáveis locais
 std::bitset<64> bit_index(subset_number);
+
+//Printando o conjunto vázio
+if(bit_index.none()){
+std::cout<<"{ }\n";
+return;
+                    };
 //Printando os subcojuntos não vazios na tela
 std::cout<<"{";
 for(int i=0; i<set_size; ++i){
@@ -71,7 +77,6 @@ if(bit_index.test(i))//Testando se o bit em questão é 1
 std::cout<<set_vector[i]<<", ";
                              };
 std::cout<<"}\n";
-
                                        };
 
 //Função principal
@@ -85,16 +90,12 @@ subset_number--;
 while(true){
 print_subset();
 subset_number--;
-if(subset_number==0)
+if(subset_number==(-1))
 break;
            };
-
-//Printando o conjunto vázio
-std::cout<<"{ }\n";
 
                               };
 
 //***************************************************************************************************************************
 //FIM DO HEADER
 #endif
-
