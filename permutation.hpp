@@ -7,6 +7,7 @@
 #include<vector>
 #include<iostream>
 #include<utility>
+#include<stdint.h>
 #include<algorithm>
 #include<cmath>
 
@@ -29,10 +30,10 @@ template<typename T>
 class permutations{
 public:
 //Membros
-int hash_value;
+uint64_t hash_value;
 int set_size;
 int shift_index;
-std::vector<int> hash_vector;
+std::vector<uint64_t> hash_vector;
 std::vector<element<T>> set_vector;
 std::vector<element<T>> shifted_set_vector;
 
@@ -40,8 +41,8 @@ std::vector<element<T>> shifted_set_vector;
 void setup();//Função que recebe input do usuário
 void shift_set();//Função que realiza um shift do conjunto a ser permutado
 void generate_permutations();//Função que gera índices para transposições
-int hash_function();//Função que calcula um valor hash para cada permutação
-bool validate_permutation();//Função que detecta permutações repetidas
+uint64_t hash_function();//Função que calcula um valor hash para cada permutação
+bool validate_permutation();//Função que detecta permitações repetidas
 void show_permutation();//Função que exibe permutações
 void run();//Função principal
 
@@ -90,7 +91,7 @@ shifted_set_vector.push_back(set_vector[(i+shift_index)%set_size]);
 
 //Função que gera um valor hash para determinar se um permutação foi computada ou não
 template<typename T>
-int permutations<T>::hash_function(){
+uint64_t permutations<T>::hash_function(){
 //Variáveis locais
 int i;
 hash_value = 0; 
@@ -99,7 +100,7 @@ for(i=0; i<set_vector.size(); ++i)
 hash_value+= std::pow(shifted_set_vector[i].index, i);
 
 return hash_value;
-                                    };
+                                         };
 
 //Função que checa se uma permutação é repetida
 template<typename T>
