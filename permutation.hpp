@@ -14,6 +14,7 @@
 //***************************************************************************************************************************
 //VARIÁVEIS GLOBAIS
 const int prime_seed[] ={2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97};
+#define PERMUTATION_CONSTANT 659798791321321  
 
 //***************************************************************************************************************************
 //CLASSES
@@ -97,7 +98,7 @@ int i;
 hash_value = 0; 
 //Computando o valor hash de uma dada disposição
 for(i=0; i<set_vector.size(); ++i)
-hash_value+= std::pow(shifted_set_vector[i].index, i);
+hash_value+= static_cast<uint64_t>(std::pow(shifted_set_vector[i].index, i))%PERMUTATION_CONSTANT;
 
 return hash_value;
                                          };
