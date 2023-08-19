@@ -58,7 +58,7 @@ std::cin>>set_size;
 basic_set.resize(0);
 
 for(int i=0; i<set_size; ++i){
-std::cout<<(i+1)<<"º elmento: ";
+std::cout<<(i+1)<<"º elemento: ";
 std::cin>>element;
 basic_set.push_back(element);
                              };
@@ -125,4 +125,3 @@ index_vector[i]=0;
 //******************************************************************************************************************
 //FIM DO HEADER
 #endif
-
