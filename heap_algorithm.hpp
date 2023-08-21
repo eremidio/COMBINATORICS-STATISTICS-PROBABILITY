@@ -62,6 +62,10 @@ std::cout<<(i+1)<<"º elemento: ";
 std::cin>>element;
 basic_set.push_back(element);
                              };
+
+//Printando a partição inicial
+std::cout<<"\n";
+print_permutation();
                                };
 
 
