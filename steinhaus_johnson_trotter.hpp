@@ -141,7 +141,7 @@ indexer2=(indexer2+1)%n;
 
 //Permutando o maior elemento para a esquerda
 if(left_to_right==true){
-while(biggest_index<0){
+while(biggest_index<n){
 std::swap(basic_set[biggest_index], basic_set[biggest_index+1]);
 print_permutation();
 control++;
