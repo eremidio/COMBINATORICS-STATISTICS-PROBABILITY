@@ -98,13 +98,6 @@ while(euclides_algorithm(a, m)!=1)
 a=generate_random_number(m);
 while(euclides_algorithm(b, m)!=1)
 b=generate_random_number(m);
-
-while(true){
-uint64_t tester = previous-(static_cast<uint64_t>(b/(a-1)));
-if(euclides_algorithm(tester, m)==1)
-break;
-           };
-
              };
 
 //Gerando a sequência de bits
