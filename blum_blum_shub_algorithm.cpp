@@ -1,5 +1,5 @@
 //VAMOS CRIAR UM PROGRAMA PARA TESTAR AS ROTINAS CRIADAS NO ARQUIVO blum_blum_shup_algorithm.hpp
-//COMPILAR ESTE PROGRAMA COM O ARQUIVO: g++ -o blum_blum_shup_algorithm blum_blum_shup_algorithm.cpp
+//COMPILAR ESTE PROGRAMA COM O ARQUIVO: g++ -o blum_blum_shub_algorithm blum_blum_shub_algorithm.cpp
 
 
 //Cabeçalho
