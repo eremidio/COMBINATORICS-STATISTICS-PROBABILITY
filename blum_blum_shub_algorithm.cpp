@@ -3,7 +3,7 @@
 
 
 //Cabeçalho
-#include"blum_blum_shup_algorithm.hpp"
+#include"blum_blum_shub_algorithm.hpp"
 #include<iostream>
 using namespace std;
 
