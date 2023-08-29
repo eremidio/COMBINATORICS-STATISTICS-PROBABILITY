@@ -53,7 +53,7 @@ uint64_t i;//variável de iteração
 
 //Procedimentos
 //Abrindo um arquivo para registrar os resultados dos experimento
-cout<<"Usuário digite o nomede um arquivo com a extensão para registrar os resultados do experimento:\n-->";
+cout<<"Usuário digite o nome de um arquivo com a extensão para registrar os resultados do experimento:\n-->";
 getline(cin, filename);
 filename+=".txt";
 file_record.open(filename, ios::in|ios::out|ios::app);
@@ -82,11 +82,9 @@ seed=next_number;
                            };
 
 //Finalizando a aplicação
-cout<<"Números pesudoaleatórios gerados com sucesso!\n";
+cout<<"Números pseudoaleatórios gerados com sucesso!\n";
 file_record.close();
 return 0;
 
 
           }
-
-
