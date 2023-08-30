@@ -33,8 +33,6 @@ insertionsort::insertionsort<int>(lista, n);
 for(i=0; i<n; i++)
 cout<<"lista["<<i<<"]= "<< lista[i]<< endl;
 //Limpando o cachê de memória
-lista=NULL;
 delete []lista;
 return 0;
 }
-
