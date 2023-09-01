@@ -1,15 +1,17 @@
-//VAMOS CRIAR UM ARQUIVO QUE IMPLEMENTA O ALGORITMO SHELLSORT PARA CLASSIFICAR ELEMENTSO EM UM ARRAY 
+//VAMOS CRIAR UM PROGRAMA  EM C++ QUE IMPLEMENTA O ALGORITMO SHELLSORT PARA ORDENAR ELEMENTOS EM UM ARRAY
 
 
-/*Cabeçalho*/
+//************************************************************************************************************************
+//CABEÇALHO
+#ifndef SHELLSORT_H
+#define SHELLSORT_H
 #include<utility>
 #include<algorithm>
-
-
-//Algoritmo Shellsort
-
+ 
+//************************************************************************************************************************
+//FUNÇÕES
 namespace shellsort{
-
+//Função que implementa o algoritmo shellsort
 template<class T>
 void shellsort(T array[], int n){
 //Variáveis locais
@@ -31,4 +33,9 @@ continue;
                            };
                                 };
 
-                   }//fim do namespoace shell sort
+                   }//Fim do namespace shellsort
+
+
+//************************************************************************************************************************
+//FIM DO HEADER
+#endif
