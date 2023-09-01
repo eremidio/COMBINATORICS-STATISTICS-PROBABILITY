@@ -1,4 +1,4 @@
- //Vamos criar um programa para testar o módulo bubblesort
+ //Vamos criar um programa para testar o módulo insertionsort
 
 /*Cabeçalho com arquivos mestres e namespaces usados*/
 #include<iostream>
