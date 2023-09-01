@@ -1,12 +1,17 @@
-//Vamos criar um arquivo mestre que contém o algoritmo insertionsort para ordenar elementos em um array
+//VAMOS CRIAR UM PROGRAMA  EM C++ QUE IMPLEMENTA O ALGORITMO INSERTIONSORT PARA ORDENAR ELEMENTOS EM UM ARRAY
 
-/*Cabeçalho*/
+
+//************************************************************************************************************************
+//CABEÇALHO
+#ifndef INSERTIONSORT_H
+#define INSERTIONSORT_H
 #include<utility>
 #include<algorithm>
-
-//Criaremos um namespace personalizado para o procedimento
+ 
+//************************************************************************************************************************
+//FUNÇÕES
 namespace insertionsort{
-
+//Função que implementao algoritmo insertionsort
 template<class T>
 void insertionsort(T array[], int n){
 //Variáveis auxiliares
@@ -19,7 +24,7 @@ for(j=0; j<i; j++){
 if(array[i]<array[j]){
 std::swap(array[i],array[j]);
 continue;
-                      };
+                     };
                   };
 
                       };
@@ -30,4 +35,8 @@ continue;
 
 
 
-                       }
+                       }//Fim do namespace insertionsort
+
+//************************************************************************************************************************
+//FIM DO HEADER
+#endif
