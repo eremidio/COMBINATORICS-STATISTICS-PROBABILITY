@@ -1,10 +1,15 @@
-/*Vamos criar um arquivo mestre com o algotitmo bubble sort para ordenar seus elementos númericos em forma crescente ou decrescente*/
+//VAMOS CRIAR UM PROGRAMA  EM C++ QUE IMPLEMENTA O ALGORITMO BUBBLESORT PARA ORDENAR ELEMENTOS EM UM ARRAY
 
-//Cabeçalho
-#include<algorithm>
+
+//************************************************************************************************************************
+//CABEÇALHO
+#ifndef BUBBLESORT_H
+#define BUBBLESORT_H
 #include<utility>
-
-
+#include<algorithm>
+ 
+//************************************************************************************************************************
+//FUNÇÕES
 namespace bubblesort{
 
 template<class T>
@@ -13,17 +18,21 @@ void bubblesort(T array[], int n){
 int i , j;
 //Condicional 
 if (n>=2){
- for(i=0; i<n;i++)
-  {for(j=1;i+j<n; j++){
-   if(array[i]>array[i+j]){
-    std::swap(array[i], array[i+j]);
-                      };
-                     };
-   };
+for(i=0; i<n;i++){
+for(j=1;i+j<n; j++){
+if(array[i]>array[i+j]){
+std::swap(array[i], array[i+j]);
+                       };
+                   };
+                 };
         };
-
-                                  };
-
+                                 };
 
 
-}
+
+                   }//Fim do namespace bubblesort
+
+
+//************************************************************************************************************************
+//FIM DO HEADER
+#endif
