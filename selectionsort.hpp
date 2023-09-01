@@ -43,7 +43,7 @@ swap_elements(array, i, j);
 
                                     };
 
-                       }//Fim do namespace slection sort
+                       }//Fim do namespace selectionsort
 
 
 
