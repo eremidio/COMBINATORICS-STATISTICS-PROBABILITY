@@ -193,7 +193,7 @@ denominator_factorial=mul_mod(denominator_factorial, i, m);
 denominator=mod_bin_pow(denominator_factorial, exponent, m);
 
 //Rsultado
-return numerator*denominator;                         
+return (numerator*denominator)%m;                         
                                                                           };
 
 
@@ -215,7 +215,7 @@ j=(digits_k.size()-1);
 
 //Loop principal, i>=j
 while(j>=0){
-result=result*binomial_modular_coefficient2(digits_n[i], digits_k[j], m);
+result=(result*binomial_modular_coefficient2(digits_n[i], digits_k[j], m))%m;
 //Atualizando variáveis para a próxima iteração
 j--;
 i--;
