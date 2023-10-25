@@ -92,20 +92,35 @@ uint64_t n_= n;
 uint64_t i;
 
 //Procedimentos
+//Ajuste de variáveis
+digits_vector.resize(0);
+
 //Calculando a menor potência maior que um dado número
 while(power_base<n)
 power_base*=base;
-power_base/=base;
 
-//Ajuste de variáveis
-digits_vector.resize(0);
+//Caso de a^b
+if(power_base==n){
+digits_vector.push_back(1);
+n/=base;
+
+while(n>0){
+digits_vector.push_back(0);
+n/=base;
+
+          };
+
+return;
+                 };
+
+//Caso geral
+power_base/=base;//Ajuste de variáveis
+
 
 //Cálculo dos dígitos do número numa dada base
 while(n_>0){
 digits_vector.push_back(n_/power_base);
 n_%=power_base;
-if(n_==0)
-digits_vector.push_back(0);
 power_base/=base;
            };
                                                                                     };
