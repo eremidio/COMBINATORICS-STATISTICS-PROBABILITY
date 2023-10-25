@@ -51,7 +51,7 @@ n/=3;
                };
 
 //Cálculo de fatores ímpares usando uma otimização 6k+1
-for(i=5; i<=(limit+1); ++i){
+for(i=5; i<=(limit+1); i+=6){
 while((n%i)==0){
 prime_vector.push_back(i);
 n/=i;
@@ -127,7 +127,7 @@ uint64_t i;
 
 //Procdimentos 
 //Loop principal
-for(i=5; i<=(limit+2); ++i){
+for(i=5; i<=(limit+2); i+=6){
 if((n%i)==0 || (n%(i+2))==0)
 return false;
                            };
@@ -213,5 +213,3 @@ return result;
 //*******************************************************************************************************************************************************************
 //FIM DO HEADER
 #endif
-
-
