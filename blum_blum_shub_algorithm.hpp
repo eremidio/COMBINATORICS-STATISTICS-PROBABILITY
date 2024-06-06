@@ -38,71 +38,77 @@ void blum_blum_shub(uint64_t);
 //FUNÇÕES
 //Função usada para se gerar um número inteiro aleatório da ordem 64 bits 
 uint64_t generate_random_prime(){
-//Variáveis locais
-uint64_t result;
 
-//Ajuste da distribuição de números aleatórios
-std::random_device generator_x;
-std::mt19937 gen(generator_x());
-std::uniform_int_distribution<uint64_t> bbs_distribution(1e6, 9e7);
+  //Variáveis locais
+  uint64_t result;
 
-//Resultado
-result=bbs_distribution(generator_x);
-return result;
+  //Procedimentos
+    //Ajuste da distribuição de números aleatórios
+    std::random_device generator_x;
+    std::mt19937 gen(generator_x());
+    std::uniform_int_distribution<uint64_t> bbs_distribution(1e6, 9e7);
+
+  //Resultado
+  result=bbs_distribution(generator_x);
+  return result;
                                 };
 
 //Função que implementa o algoritmo de Blum-Blum-Shub
 //Usaremos as funções is_prime e gcd_euclides que estão definidas no arquivo euler_totient_function.h
 void blum_blum_shub(uint64_t bit_size){
-//Variáveis locais
-uint64_t prime1, prime2;
-uint64_t m, previous, next;
-short bit_array[500000]; 
 
-//Procedimentos
-//Selecionando dois números primos entre 10^6 e 10^7
-pick1:
-prime1=generate_random_prime();
+  //Variáveis locais
+  uint64_t prime1, prime2;
+  uint64_t m, previous, next;
+  short bit_array[500000]; 
 
-if(is_prime(prime1)==false || (prime1%4)!=3)
-goto pick1;
 
-pick2:
-prime2=generate_random_prime();
+  //Procedimentos
+    //Selecionando dois números primos entre 10^6 e 10^7
+    pick1:
+    prime1=generate_random_prime();
 
-if(is_prime(prime2)==false || (prime2%4)!=3)
-goto pick1;
+    if(gauss_euler_primality_test(prime1)==false || (prime1%4)!=3)
+      goto pick1;
 
-//Calculando o congruente e checando se os valores selecionados são bons
-m=prime1*prime2;
+    pick2:
+    prime2=generate_random_prime();
 
-if(gcd_euclides(euler_totient_function(prime1-1), euler_totient_function(prime2-1))>(m/100))
-goto pick1;
+    if(gauss_euler_primality_test(prime2)==false || (prime2%4)!=3)
+      goto pick1;
 
-//Gerando uma semente inicial coprima com o congruente
-pick3:
-previous=generate_random_prime();
 
-if(gcd_euclides(previous, m)!=1)
-goto pick3;
+    //Calculando o congruente e checando se os valores selecionados são bons
+    m=prime1*prime2;
 
-//Loop principal
-//Computando o primeiro bit
-bit_array[0] = even_parity_bit(previous);
+    if(gcd_euclides(euler_totient_function(prime1-1), euler_totient_function(prime2-1))>(m/100))
+      goto pick1;
 
-//Demais termos na sequência
-for(uint64_t i=1; i<bit_size; ++i){
-next=((previous%m)*(previous%m))%m;
-bit_array[i] = even_parity_bit(previous);
+    //Gerando uma semente inicial coprima com o congruente
+    pick3:
+      previous=generate_random_prime();
 
-//Atualizando variáveis para próxima iteração
-previous=next;
-                                  };
+    if(gcd_euclides(previous, m)!=1)
+      goto pick3;
 
-//Printando a string binária gerada
-for(uint64_t j=0; j<bit_size; ++j)
-std::cout<<bit_array[j];
-std::cout<<"\n";
+    //Loop principal
+      //Computando o primeiro bit
+      bit_array[0] = even_parity_bit(previous);
+
+      //Demais termos na sequência
+      for(uint64_t i=1; i<bit_size; ++i){
+        next=((previous%m)*(previous%m))%m;
+        bit_array[i] = even_parity_bit(previous);
+
+      //Atualizando variáveis para próxima iteração
+      previous=next;
+                                        };
+
+
+    //Printando a string binária gerada
+    for(uint64_t j=0; j<bit_size; ++j)
+      std::cout<<bit_array[j];
+    std::cout<<"\n";
 
                                       };
 
