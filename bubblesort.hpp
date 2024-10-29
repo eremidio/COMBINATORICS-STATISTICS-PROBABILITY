@@ -1,4 +1,4 @@
-//VAMOS CRIAR UM PROGRAMA  EM C++ QUE IMPLEMENTA O ALGORITMO BUBBLESORT PARA ORDENAR ELEMENTOS EM UM ARRAY
+//VAMOS CRIAR UM PROGRAMA QUE IMPLEMENTA O ALGORITMO BUBBLESORT PARA ORDENAR ELEMENTOS EM UM ARRAY
 
 
 //************************************************************************************************************************
@@ -14,19 +14,22 @@ namespace bubblesort{
 
 template<class T>
 void bubblesort(T array[], int n){
-//Definição de variáveis auxialiares
-int i , j;
-//Condicional 
-if (n>=2){
-for(i=0; i<n;i++){
-for(j=1;i+j<n; j++){
-if(array[i]>array[i+j]){
-std::swap(array[i], array[i+j]);
-                       };
-                   };
-                 };
+
+  //Definição de variáveis auxialiares
+  int i , j;
+
+    //Procedimentos
+    if (n>=2){
+      for(i=0; i<n;i++){
+        for(j=1;i+j<n; j++){
+          if(array[i]>array[i+j]){
+            std::swap(array[i], array[i+j]);
+          };
         };
-                                 };
+      };
+    };
+
+};
 
 
 
@@ -36,3 +39,4 @@ std::swap(array[i], array[i+j]);
 //************************************************************************************************************************
 //FIM DO HEADER
 #endif
+

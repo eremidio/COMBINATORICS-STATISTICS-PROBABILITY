@@ -1,4 +1,4 @@
-//VAMOS CRIAR UM PROGRAMA QUE IMPLMENTA O ALGORITMO MERGESORT
+//VAMOS CRIAR UM PROGRAMA QUE IMPLEMENTA O ALGORITMO MERGESORT
 
 //**************************************************************************************************************************
 //CABEÇALHO
@@ -9,70 +9,76 @@
 //**************************************************************************************************************************
 //FUNÇÕES
 namespace mergesort{
+
+
 //Função que particiona um array em dois subarrays e combina os seus valores
 template<typename T>
 void merge(T array[], int left, int mid, int right){
-//Gerando dois subarrays para alocar os elementos do array principal
-T subarray1[mid - left + 1];
-T subarray2[right - mid];
 
-//Alocando oselmentos do array prncipal nos subarays
-for(int i = 0; i<(mid-left+1); ++i)
-subarray1[i] = array[(left + i)];
+  //Gerando dois subarrays para alocar os elementos do array principal
+  T subarray1[mid - left + 1];
+  T subarray2[right - mid];
 
-for(int j = 0; j<(right-mid); ++j)
-subarray2[j] = array[(mid + 1 + j)];
+  //Alocando oselmentos do array prncipal nos subarays
+  for(int i = 0; i<(mid-left+1); ++i)
+  subarray1[i] = array[(left + i)];
+
+  for(int j = 0; j<(right-mid); ++j)
+    subarray2[j] = array[(mid + 1 + j)];
 
 
-//Combinandos os subarray com os elementos em ordem crescente
-//Variáveis locais
-int k=0, l=0, m=left;
+  //Combinandos os subarray com os elementos em ordem crescente
+    //Variáveis locais
+    int k=0, l=0, m=left;
 
-//Procedimentos
-while(k<(mid-left+1) && l<(right-mid)){
-if(subarray1[k]<=subarray2[l]){
-array[m] = subarray1[k];
-++k;
-                              }
-else{
-array[m] = subarray2[l];
-++l;
+    //Procedimentos
+    while(k<(mid-left+1) && l<(right-mid)){
+      if(subarray1[k]<=subarray2[l]){
+        array[m] = subarray1[k];
+        ++k;
+      }
+      else{
+        array[m] = subarray2[l];
+        ++l;
+      };
+      ++m;
     };
-++m;
-                                      };
 
-//Adicionando os elementos remanescentes
-while(k<(mid-left+1)){
-array[m] = subarray1[k];
-++k;
-++m;
-                     };
+    //Adicionando os elementos remanescentes
+    while(k<(mid-left+1)){
+      array[m] = subarray1[k];
+      ++k;
+      ++m;
+    };
 
-while(l<(right-mid)){
-array[m] = subarray2[l];
-++l;
-++m;
-                    };
-                                                   };
+    while(l<(right-mid)){
+      array[m] = subarray2[l];
+      ++l;
+      ++m;
+    };
+
+
+};
 
 //Função principal do algoritmo
 template<typename T>
 void mergesort(T array[], int left , int right){
-//Caso base o array contém menos de dois elementos
-if(left>= right)
-return;
 
-//Caso geral: divide-se o array em dois subarrays
-//Variáveis locais
-int mid = (right+left)/2;
+  //Caso base o array contém menos de dois elementos
+  if(left>= right) return;
 
-//Chamada recursiva do algoritmo
-mergesort(array, left, mid);
-mergesort(array, mid+1, right);
+  //Caso geral: divide-se o array em dois subarrays
+    //Variáveis locais
+    int mid = (right+left)/2;
 
-//Combinando dois subarray em um único array
-merge(array, left, mid, right);
-                                               };
+    //Chamada recursiva do algoritmo
+    mergesort(array, left, mid);
+    mergesort(array, mid+1, right);
+
+    //Combinando dois subarray em um único array
+    merge(array, left, mid, right);
+
+};
 
                    }//Fim do namespace mergesort
 

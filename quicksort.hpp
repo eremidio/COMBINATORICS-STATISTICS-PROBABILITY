@@ -13,48 +13,48 @@ namespace quicksort{
 //Função que muda dois elementos em um array de posição
 template<typename T>
 void swap_elements(T array[], int i, int j){
-T temp;
-//Procedimento
-temp=array[i];
-array[i]=array[j];
-array[j]=temp;
 
-                                           };
+  //Variáveis locais
+  T temp;
+
+  //Procedimento
+  temp=array[i];
+  array[i]=array[j];
+  array[j]=temp;
+
+};
+
 
 template<typename T>
 void quicksort(T array[], int left, int right){
-//Variáveis locais
-int i , last;
 
-//Procedimentos
-//Caso base: o array contém somente 2 elementos no máximo
-if(left>=right)
-return;
+  //Variáveis locais
+  int i , last;
 
-//Caso geral:
-//Selecionandoo elemento pivotal e o movendo para a posição inicial
-swap_elements(array, left, (left+right)/2);
-last=left;
+  //Procedimentos
+    //Caso base: o array contém somente 2 elementos no máximo
+    if(left>=right) return;
 
-//Iterando sobre uma partição de left+1, ..., right separando os lementos em duas sublistas maiores ou menores que um dado elemento pivotal
-for(i = left+1; i<=right; ++i){
-if(array[i]<array[left])
-swap_elements(array, ++last, i);
-                              };
+    //Caso geral:
+      //Selecionandoo elemento pivotal e o movendo para a posição inicial
+      swap_elements(array, left, (left+right)/2);
+      last=left;
 
-//Retornando o elemento pivotal a sua posição original
-swap_elements(array, left, last);
+      //Iterando sobre uma partição de left+1, ..., right separando os lementos em duas sublistas maiores ou menores que um dado elemento pivotal
+      for(i = left+1; i<=right; ++i){
+        if(array[i]<array[left])
+          swap_elements(array, ++last, i);
+      };
 
-//TESTE USE UM // APÓS O MESMO
-//std::cout << "Sorting array from " << left << " to " << right << ": ";
-//for (int i = left; i <= right; ++i)
-//std::cout << array[i] << " ";
-//std::cout << '\n';
+      //Retornando o elemento pivotal a sua posição original
+      swap_elements(array, left, last);
 
-//Chamada recursiva do algoritmo
-quicksort(array, left, last-1);
-quicksort(array, last+1, right);
-                                              };
+
+    //Chamada recursiva do algoritmo
+    quicksort(array, left, last-1);
+    quicksort(array, last+1, right);
+
+};
 
                    }//Fim do namespace quicksort
 
